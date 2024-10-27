@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>Cadastro</title>
+    </head>
+    <body>
+        <nav style="background-color: orange;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Se Cadastre aqui:</a>
+            </div>
+          </nav>
+          <form action= "{% url 'listagem_usuarios'%}" method= "post">
+            {% csrf_token %}
+            <!-- Usando isso dentro de um formulário, o Django gera um token 
+             único e invisível para cada solicitação de formulário, 
+             garantindo que apenas o usuário real, 
+             usando o formulário da sua aplicação, possa submetê-lo  -->
+            <div style="text-align: center;" class= "container">
+            
+            <h1>Cadastro de Usuário</h1>
+            Nome  <input name="nome" class= "form-control-sm" type="text">
+            Idade  <input name="idade" class= "form-control-sm" type="text">
+            <button class= "form-control-sm">Enviar</button>
+          
+          </div>
+        </form>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
